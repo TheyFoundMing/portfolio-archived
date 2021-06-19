@@ -5,7 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Link from "@material-ui/core/Link";
 
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
   header: {
@@ -14,14 +14,17 @@ const useStyles = makeStyles({
     color: "black",
     display: "flex",
     alignItems: "flex-end",
-    paddingRight: "3em",
+    paddingRight: "5em",
   },
   navlinks: {
     color: "black",
-    border: "1px solid black",
-    boxShadow: "4px 2px 1px red",
+    border: "2px solid black",
     padding: "0.2em",
     margin: "0.5em",
+    textDecoration: "none",
+    "&:hover": {
+      boxShadow: "4px 2px 1px crimson",
+    },
   },
 });
 
