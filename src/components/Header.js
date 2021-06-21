@@ -9,22 +9,24 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
   header: {
-    backgroundColor: "white",
+    backgroundColor: "#ffffff00",
     boxShadow: "none",
     color: "black",
     display: "flex",
     alignItems: "flex-end",
     paddingRight: "5em",
+    position: "fixed",
   },
   navlinks: {
     color: "black",
-    border: "2px solid black",
-    padding: "0.2em",
+    border: "2px dashed crimson",
+    padding: "0.3em",
     margin: "0.5em",
     textDecoration: "none",
     "&:hover": {
       boxShadow: "4px 2px 1px crimson",
     },
+    backgroundColor: "white",
   },
 });
 
@@ -41,7 +43,7 @@ export default function Hook() {
             activeClassName="active"
             to="/"
           >
-            Home
+            01. Home
           </Link>
           <Link
             className={classes.navlinks}
@@ -49,7 +51,7 @@ export default function Hook() {
             activeClassName="active"
             to="/about"
           >
-            About
+            02. About
           </Link>
           <Link
             className={classes.navlinks}
@@ -57,7 +59,7 @@ export default function Hook() {
             activeClassName="active"
             to="/work"
           >
-            Work/Projects
+            03. Work/Projects
           </Link>
         </Toolbar>
       </AppBar>
