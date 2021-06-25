@@ -14,6 +14,8 @@ import weather from "../images/weatherss.png";
 import fakebrock from "../images/fakebrockss.png";
 import tictac from "../images/tictacss.png";
 
+// work experience
+
 const Populix = {
   title: "Software Developer Intern (Remote)",
   company: "Populix",
@@ -33,6 +35,8 @@ const Western = {
   content:
     "Collaborated with professors in a fast-paced environment, graded student assignments and tests, facilitated office hours for students",
 };
+
+// personal projects
 
 const Weather = {
   image: weather,
@@ -63,23 +67,5 @@ const useStyles = makeStyles({
 export default function Work() {
   const classes = useStyles();
 
-  const popContent = (
-    <Tree title={Populix.title} child={<TreeContent data={Populix} />} />
-  );
-  const wmuContent = (
-    <Tree title={Western.title} child={<TreeContent data={Western} />} />
-  );
-
-  return (
-    <div>
-      <Tree title={"Experience"} child={[popContent, wmuContent]} />
-      {popContent}
-      <h1>Personal Projects</h1>
-      <div className={classes.projects}>
-        <Project data={Weather} />
-        <Project data={FakeBrock} />
-        <Project data={TicTac} />
-      </div>
-    </div>
-  );
+  return <div></div>;
 }

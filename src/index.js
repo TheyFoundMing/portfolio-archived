@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
 import Home from "./views/Home";
-import About from "./views/About";
+import Projects from "./views/Projects";
 import Work from "./views/Work";
 
 const routing = (
@@ -20,7 +20,7 @@ const routing = (
         <Header />
         <div className="views">
           <Route path exact="/" component={Home} />
-          <Route path="/about" component={About} />
+          <Route path="/projects" component={Projects} />
           <Route path="/work" component={Work} />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import { useMeasure } from "react-use";
 
@@ -27,9 +27,15 @@ const useStyles = makeStyles({
   },
 });
 
-function Tree(props) {
+const usePrevious = (value) => {
+  const ref = useRef();
+  useEffect(() => (ref.current = value), [value]);
+};
+
+const Tree = (props) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const previous = usePrevious(open);
   const [ref, { height: viewHeight }] = useMeasure();
   const { height, opacity, y } = useSpring({
     from: { height: 0, opacity: 0, y: 0 },
@@ -62,7 +68,7 @@ function Tree(props) {
         className={classes.content}
         style={{
           opacity,
-          height: open ? "auto" : height,
+          height: open && previous === open ? "auto" : height,
         }}
       >
         <animated.div className={classes.items} style={itemsProps}>
@@ -71,6 +77,6 @@ function Tree(props) {
       </animated.div>
     </div>
   );
-}
+};
 
 export default Tree;

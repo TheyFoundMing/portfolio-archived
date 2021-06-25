@@ -49,17 +49,17 @@ export default function Hook() {
             className={classes.navlinks}
             component={NavLink}
             activeClassName="active"
-            to="/about"
+            to="/work"
           >
-            02. About
+            02. Work
           </Link>
           <Link
             className={classes.navlinks}
             component={NavLink}
             activeClassName="active"
-            to="/work"
+            to="/projects"
           >
-            03. Work/Projects
+            03. Projects
           </Link>
         </Toolbar>
       </AppBar>
