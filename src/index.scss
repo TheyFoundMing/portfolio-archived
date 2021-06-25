@@ -4,6 +4,10 @@ body,
   height: 100%;
 }
 
+body {
+  position: absolute;
+}
+
 #root,
 .index-wrapper {
   width: 100%;
@@ -28,4 +32,8 @@ code {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.views {
+  margin: 2.5em 10em 0em 22em;
 }
