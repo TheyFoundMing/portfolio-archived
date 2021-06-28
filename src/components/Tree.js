@@ -30,11 +30,12 @@ const useStyles = makeStyles({
 const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => (ref.current = value), [value]);
+  return ref.current;
 };
 
-const Tree = (props) => {
+const Tree = ({ children, title, defaultOpen = false }) => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen);
   const previous = usePrevious(open);
   const [ref, { height: viewHeight }] = useMeasure();
   const { height, opacity, y } = useSpring({
@@ -59,20 +60,23 @@ const Tree = (props) => {
 
   return (
     <div>
-      <div className={classes.title} onClick={() => setOpen(!open)}>
-        <img src={open ? minImg : closeImg} alt="toggle" />
-        <span>{props.title}</span>
+      <div className={classes.title}>
+        <img
+          src={open ? minImg : closeImg}
+          alt="toggle"
+          onClick={() => setOpen(!open)}
+        />
+        <span>{title}</span>
       </div>
       <animated.div
-        ref={ref}
         className={classes.content}
         style={{
           opacity,
           height: open && previous === open ? "auto" : height,
         }}
       >
-        <animated.div className={classes.items} style={itemsProps}>
-          {props.child}
+        <animated.div className={classes.items} style={itemsProps} ref={ref}>
+          {children}
         </animated.div>
       </animated.div>
     </div>

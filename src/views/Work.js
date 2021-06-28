@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-
-import Experience from "../components/Experience";
 import Project from "../components/Project";
 
 import Tree from "../components/Tree";
@@ -10,9 +8,7 @@ import { makeStyles } from "@material-ui/core";
 
 import wmuImage from "../images/wmu.png";
 import popImage from "../images/populix.png";
-import weather from "../images/weatherss.png";
-import fakebrock from "../images/fakebrockss.png";
-import tictac from "../images/tictacss.png";
+import Experience from "../components/WinDialog";
 
 // work experience
 
@@ -36,26 +32,6 @@ const Western = {
     "Collaborated with professors in a fast-paced environment, graded student assignments and tests, facilitated office hours for students",
 };
 
-// personal projects
-
-const Weather = {
-  image: weather,
-  title: "5 Days - Weather App",
-  src: "https://theyfoundming.github.io/weather-app/",
-};
-
-const FakeBrock = {
-  image: fakebrock,
-  title: "Fake Brockhampton Website",
-  src: "https://thefakebrockhampton.000webhostapp.com/",
-};
-
-const TicTac = {
-  image: tictac,
-  title: "Rock, Paper, Scissors",
-  src: "https://theyfoundming.github.io/Tic-Tac-Toe/",
-};
-
 const useStyles = makeStyles({
   projects: {
     display: "grid",
@@ -67,5 +43,16 @@ const useStyles = makeStyles({
 export default function Work() {
   const classes = useStyles();
 
-  return <div></div>;
+  return (
+    <div>
+      <Tree title={"Experience"}>
+        <Tree title={"Populix"}>
+          <TreeContent data={Populix} />
+        </Tree>
+        <Tree title={"Western"}>
+          <TreeContent data={Western} />
+        </Tree>
+      </Tree>
+    </div>
+  );
 }
