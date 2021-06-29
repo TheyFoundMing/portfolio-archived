@@ -1,28 +1,27 @@
 import React, { Component } from "react";
-import Tree from "../components/Tree";
 
-const Container = (props) => {
-  return <div>{props.children}</div>;
+import weather from "../images/weatherss.png";
+import fakebrock from "../images/fakebrockss.png";
+import tictac from "../images/tictacss.png";
+
+const Weather = {
+  image: weather,
+  title: "5 Days - Weather App",
+  src: "https://theyfoundming.github.io/weather-app/",
 };
 
-export default class About extends Component {
-  render() {
-    return (
-      <div>
-        About
-        <Tree
-          child={
-            <div>
-              <Tree child={"This is my child"} />
-              <Tree child={"This is my child"} />
-            </div>
-          }
-        />
-        <Container>
-          <Tree child={"This is my child"} />
-          <Tree child={"This is my child"} />
-        </Container>
-      </div>
-    );
-  }
+const FakeBrock = {
+  image: fakebrock,
+  title: "Fake Brockhampton Website",
+  src: "https://thefakebrockhampton.000webhostapp.com/",
+};
+
+const TicTac = {
+  image: tictac,
+  title: "Rock, Paper, Scissors",
+  src: "https://theyfoundming.github.io/Tic-Tac-Toe/",
+};
+
+export default function Projects(props) {
+  return <div></div>;
 }

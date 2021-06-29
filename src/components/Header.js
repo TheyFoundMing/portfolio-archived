@@ -30,7 +30,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Hook() {
+export default function Header() {
   const classes = useStyles();
   return (
     <div>
