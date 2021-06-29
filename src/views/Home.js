@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import WinDialog from "../components/WinDialog";
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <WinDialog>
         <h1>Life is Soup, I am Fork</h1>
         <h4>Helter-skelter junior web developer.</h4>
         <div>
@@ -22,7 +23,7 @@ export default class Home extends Component {
           recently adopted hamster Jessie. Sometimes, I get homesick and would
           start cooking meals from my hometown.
         </div>
-      </div>
+      </WinDialog>
     );
   }
 }
